@@ -1,0 +1,62 @@
+main{
+  display: flex;
+  background-color: aquamarine;
+  width: 80vw;
+  height: auto;
+  padding: 20px;
+  /* flex-direction: row;
+  flex-wrap: wrap-reverse; */
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/* .model1  */
+div{
+  height: 100px;
+  width: 100px;
+  background-color: orangered;
+  order: 3;
+  flex-shrink: 2;
+}
+
+.model2{
+  height: 140px;
+  width: 80px;
+  background-color: gray;
+  flex-grow: 1;
+  order: 3;
+}
+
+.model3{
+  height: 200px;
+  width: 100px;
+  background-color: green;
+  order: 1;
+  flex-shrink: 1;
+}
+
+.model1, .model2, .model3{
+  margin: 10px;
+}
+
+div{
+  height: 300px !important;
+  width: 100px !important;
+  flex: 1; 
+  cursor:pointer;
+}
+
+div:hover{
+  flex: 3;
+  flex-direction: row-reverse;
+  flex-direction: column;
+}
+
+
+
+p{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}

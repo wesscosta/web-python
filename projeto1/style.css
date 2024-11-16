@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+main ul li{
+  width: 100px;
+  height: 300px;
+  margin: 10px;
+  background-color: #333;
+  list-style-type: none;
+  text-align: center;
+  padding: auto;
+  display: inline-block;
+  align-items: flex-start;
+}
+
+h1 {
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+
+label {
+  margin-top: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+ 
+}
+
+#chamada_servicos{
+  font-size: 1.3em;
+}

@@ -1,0 +1,18 @@
+main{
+  margin: auto;
+  background-color: aquamarine;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+}
+
+div{
+  height: 100px;
+  width: 100px;
+  background-color: orangered;
+  margin: 10px;
+
+}

@@ -16,3 +16,6 @@ class Product(models.Model):
     
     def __str__(self) -> str:
         return self.name + " | " + self.brand + " | " + str(self.price)
+    
+    def get_id(self):
+       return self._id

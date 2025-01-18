@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Produtos</title>
-    <style>
-        table{
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table th, table td{
-            border: 1 solid #afafaf;
-            padding: 8px;
-            text-align: left;
-        }
-        table th{
-            background-color: #2e2e2e;
-            color: #dcdcdc;
-        }
-    </style>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %} Lista de Produtos {% endblock title %}
+
+{% block conteudo %}
     <h1>Lista de Produtos</h1>
 
     <table>
@@ -37,6 +18,7 @@
                 <th>Qtd. Estoque</th>
                 <th>Criado em</th>
                 <th>User</th>
+                <th>Ações</th>
             </tr>
         </thead>
 
@@ -55,6 +37,12 @@
             <td>{{product.countInStock}}</td>
             <td>{{product.createdAt}}</td>
             <td>{{product.user}}</td>
+            <td>
+                <a href="{% url 'product-update' product.pk %}"></a><i class="bi bi-pencil-square"></i></a>
+                <a href="{% url 'product-detail' product.pk %}"><i class="bi bi-eye"></i></a>
+                <a href="{% url 'product-delete' product.pk %}"><i class="bi bi-trash"></i></a>
+            </td>
+            
         </tr>
 
         {% empty%}
@@ -67,5 +55,4 @@
     </tbody>
 
 </table>
-</body>
-</html>
+{% endblock conteudo%}

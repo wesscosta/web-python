@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Detalhes do Produto {% endblock title %}
+
+{% block conteudo %}
+
+<h1>{{ product.name }}</h1>
+<p><strong>Brand:</strong> {{ product.brand }}</p>
+<p><strong>Category:</strong> {{ product.category }}</p>
+<p><strong>Description:</strong> {{ product.description }}</p>
+<p><strong>Rating:</strong> {{ product.rating }}</p>
+<p><strong>Price:</strong> ${{ product.price }}</p>
+<p><strong>Stock:</strong> {{ product.countInStock }}</p>
+<p><strong>Created At:</strong> {{ product.createdAt|date:"Y-m-d H:i" }}</p>
+<p><strong>User:</strong> {{ product.user.username }}</p>
+<img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width: 300px;">
+<br>
+<a href="{% url 'product-list' %}">Back to list</a>
+
+{% endblock conteudo %}

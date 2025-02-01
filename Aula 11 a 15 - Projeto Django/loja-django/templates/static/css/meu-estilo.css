@@ -15,6 +15,11 @@ table {
 }
 
 
+.container img{
+  height: 200px;
+  object-fit: contain;
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;

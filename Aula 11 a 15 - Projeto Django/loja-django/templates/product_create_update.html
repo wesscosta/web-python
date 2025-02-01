@@ -1,15 +1,40 @@
 {% extends 'components/base.html' %}
-
-{% block title %} Novo Produto {% endblock title %}
-
+ {% load widget_tweaks %}
+ {% block title %} Novo Produto{% endblock title %} 
 
 {% block conteudo %}
 
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form.as_p}}
+<div class="card shadow mb-4">
+  <div class="card-body">
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
 
-    <button type="submit">Salvar</button>
-    <a href="{% url 'product-list' %}">Cancelar</a>
-</form>
-{% endblock conteudo %}
+      <div class="card mb-4">
+        <div class="card-header d-sm-flex align-items-center justify-content-between">
+          <div>
+            <i class="bi bi-basket2"></i>
+            <span>Cadastro/Atualização de Produtos</span>
+          </div>
+        </div>
+      </div>
+
+      {% if form %}
+      <div class="card-body">
+        <div class="form-flex">
+          {%for field in form%}
+          <div class="form-group form-row flex-item mb-2">
+            <label for="">{{field.label}} {%if field.field.required%}*{% endif %}:</label>
+            {% render_field field placeholder=field.label class='form-controle'%}
+          </div>
+          {% endfor %} {% endif%}
+        </div>
+      </div>
+
+      <button type="submit">Salvar</button>
+      <a href="{% url 'product-list' %}">Cancelar</a>
+    </form>
+    {% endblock conteudo %}
+  </div>
+</div>
+</div>
+</div>

@@ -30,7 +30,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+#package e libs 
+INSTALLED_APPS += [
+    'widget_tweaks',
+]
+
+#apps
 INSTALLED_APPS += [
     'app',
 ]

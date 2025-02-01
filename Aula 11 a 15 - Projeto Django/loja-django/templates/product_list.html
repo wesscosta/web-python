@@ -1,5 +1,7 @@
 {% extends 'components/base.html' %}
 
+{%load static%}
+
 {% block title %} Lista de Produtos {% endblock title %}
 
 {% block conteudo %}
@@ -10,44 +12,60 @@
         <section class="py-5 text-center container">
           <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-              <h1 class="fw-light">  Lista de Produtos</h1>
-              <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+              <p class="lead text-body-secondary">E-commerce Vende+</p>
               <p>
                 <a href="{% url 'product-create'%}" class="btn btn-primary my-2">Adicionar Produtos</a>
               </p>
             </div>
           </div>
         </section>
-      
+        
         <div class="album py-5 bg-body-tertiary">
+          <h1 class="fw-light">  Lista de Produtos</h1>
           <div class="container">
       
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
             {% for product in products%}
               <div class="col">
-                <div class="card shadow-sm">
-                  <img src="{{ product.image.url }}" alt="{{ product.titulo }}">
+                <div class="card shadow-sm" style=" 
+                height: 400px;">
 
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                  {% if product.image %}
+                  <img src="{{ product.image.url }}" alt="{{ product.titulo }}" style=" 
+                  height: 250px;
+                  object-fit: contain;"
+              >
 
+                  {% else%}
 
-                  <div class="card-body">
-                    <p class="card-text text-center"> <strong>{{product.name}}</strong></p>
-                    <p class="card-text"> {{product.description}}</p>
-                    <p class="card-text"> {{product.price}}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group w-75">
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" style=" 
+                  height: 250px;
+                  object-fit: contain;"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                  {% endif%}
+
+                  <div class="card-body text-center">
+                    <p class="card-text my-0"> <strong>{{product.name}}</strong></p>
+                    <p class="card-text my-0"> {{product.description}}</p>
+                    <p class="card-text my-0 text-muted">  <strong>R$ {{product.price}}</strong></p>
+                    <div class="d-flex justify-content-center ">
+                      <div class="btn-group w-50 ">
                         <a class="btn btn-sm btn-outline-secondary" href="{% url 'product-update' product.pk %}"><i class="bi bi-pencil-square"></i></a>
                         <a class="btn btn-sm btn-outline-secondary" href="{% url 'product-detail' product.pk %}"><i class="bi bi-eye"></i></a>
                         <a class="btn btn-sm btn-outline-secondary" href="{% url 'product-delete' product.pk %}"><i class="bi bi-trash"></i></a>
 
                       </div>
-                      <small class="text-body-secondary">9 mins</small>
+          
                     </div>
                   </div>
                 </div>
               </div>
-              {%endfor%}
+              {% empty%}
+              <div>
+                  <div colspan="10"> Nenhum Produto Encontrado</div>
+              </div>
+      
+              {% endfor%}
+      
     
             </div>
           </div>
@@ -57,57 +75,9 @@
   
       
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Marca</th>
-                <th>Categoria</th>
-                <th>Descrição</th>
-                <th>Avaliação</th>
-                <th>Preço</th>
-                <th>Qtd. Estoque</th>
-                <th>Criado em</th>
-                <th>User</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
+        
+
+    
 
 
-    <tbody>
-
-        {% for product in products%}
-        <tr>
-            <td>{{product.get_id}}</td>
-            <td>{{product.name}}</td>
-            <td>{{product.brand}}</td>
-            <td>{{product.category}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.rating}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.countInStock}}</td>
-            <td>{{product.createdAt}}</td>
-            <td>{{product.user}}</td>
-            <td>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
-                
-                <a href="{% url 'product-update' product.pk %}"><i class="bi bi-pencil-square"></i></a>
-                <a href="{% url 'product-detail' product.pk %}"><i class="bi bi-eye"></i></a>
-                <a href="{% url 'product-delete' product.pk %}"><i class="bi bi-trash"></i></a>
-            </td>
-            
-        </tr>
-
-        {% empty%}
-        <tr>
-            <td colspan="10"> Nenhum Produto Encontrado</td>
-        </tr>
-
-        {% endfor%}
-
-    </tbody>
-
-</table>
 {% endblock conteudo%}

@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header{
+    background-color: #333333;
+    color: #eee;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #eee;
+    text-decoration: none;
+}
+
+
+nav ul li a:hover{
+    background-color: darkslategray;
+    color: beige;
+    padding: 5px;
+    border-radius: 5px;
+}

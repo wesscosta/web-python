@@ -33,3 +33,98 @@ nav ul li a:hover{
     padding: 5px;
     border-radius: 5px;
 }
+
+h1{
+    color:#333;
+    margin-bottom:15px
+}
+
+h2{
+    margin: 25px 0 15px
+}
+
+article{
+    background-color: #f5f5f5;
+    border:1px solid #ddd;
+    border-left: 4px solid darkslategray;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.8)
+}
+article h3{
+    color:darkslategray;
+    margin-bottom: 10px;
+}
+
+article:hover{
+    background-color:#eee
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+footer{
+    background-color: #333333;
+    color:#fff;
+    text-align: center;
+    padding:10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-color: #d3d3d3;
+    padding:20px 20px 5px 20px;
+    border-radius:5px;
+    
+}
+
+label{
+    margin-top: 10px;
+}
+
+input, textarea{
+    padding: 10px;
+    margin-top:5px;
+}
+textarea{
+    min-height:120px;
+    resize: vertical;
+
+}
+
+button{
+    margin: 50px;
+    padding:10px;
+    border: 1px #ccc solid;
+    border-radius: 10px;
+    background-color: #03a30f;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #03820c
+}
+
+#container-contato{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    padding:0;
+}
+#container-contato img {
+    width: 100%;
+    max-width:600px;
+    margin:0;
+}
